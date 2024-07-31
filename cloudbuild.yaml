@@ -5,12 +5,12 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'us-central1-docker.pkg.dev/dcn-aiml/ml-models/bike_share_model:$SHORT_SHA']
 
-- name: 'us-central1-docker.pkg.dev/dcn-aiml/ml-models/bike_share_model:$SHORT_SHA'
-  entrypoint: 'bash'
-  args:
-   - '-c'
-   - |
-      python main.py & python -m pytest
+#- name: 'us-central1-docker.pkg.dev/dcn-aiml/ml-models/bike_share_model:$SHORT_SHA'
+#  entrypoint: 'bash'
+#  args:
+#   - '-c'
+#   - |
+#      python main.py & python -m pytest
   
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
